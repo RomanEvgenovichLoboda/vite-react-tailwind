@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+   @apply w-svw bg-stone-900 border-solid border-t-2 border-stone-700
+    flex flex-row items-center justify-between p-3 ;
+
+    .iconsContainer{
+        @apply flex flex-row items-center justify-center gap-3;
+
+        a{
+            @apply cursor-pointer hover:text-sky-800 transition-colors delay-150 duration-150;
+        }
+    }
+}

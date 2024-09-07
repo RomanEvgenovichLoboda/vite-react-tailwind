@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply w-full p-3 bg-zinc-700 sticky top-0 flex justify-between items-center;
+
+    img{
+        @apply w-16 hover:opacity-40 transition-opacity duration-150 delay-150 cursor-pointer;
+    }
+
+
+    .menu {
+            /*@apply flex-grow grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6;*/
+            @apply lg:flex flex-row items-center lg:justify-around flex-wrap hidden;
+
+            button {
+                @apply relative mx-7;
+
+                a {
+                    @apply text-lg text-nowrap text-sky-600 hover:text-sky-400 transition-colors delay-150 duration-200 z-10
+                    flex flex-row items-center justify-center;
+                }
+
+                svg{
+                    @apply h-5 w-5 text-sky-600 group-hover:text-sky-400 transition-colors delay-150 duration-200;
+                }
+                ul {
+                    @apply w-64 p-3 absolute bg-neutral-50 shadow shadow-gray-300 transition delay-200 duration-200 z-50;
+                    li{
+                        @apply flex flex-row items-start justify-start m-5;
+                    }
+                }
+            }
+
+        }
+
+
+
+
+
+
+    .btnDiv{
+        @apply flex cursor-pointer min-w-56;
+        
+        .redBtn{
+            @apply bg-red-800 p-2 rounded-l-md hover:bg-red-950 hover:text-red-700 transition-colors delay-150 duration-150;
+        }
+        .blueBtn{
+            @apply bg-sky-800 p-2 rounded-r-md hover:bg-sky-950 hover:text-sky-700 transition-colors delay-150 duration-150;
+        }
+    }
+}
+
+
+
+ 
