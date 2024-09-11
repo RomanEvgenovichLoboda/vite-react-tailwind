@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menuAbsolute{
+        @apply absolute top-0 left-0 w-full bg-stone-700  flex-col hidden;
+        .head{
+            @apply w-full h-16 bg-stone-800 flex flex-row items-center justify-end text-neutral-100 text-4xl font-light font-sans px-4;
+            .closeIcon{
+                @apply cursor-pointer text-red-800 hover:text-red-600 transition-colors duration-150 delay-150;
+            }
+        }
+        .menuS {
+            @apply flex flex-col items-center justify-center py-5;
+
+            button {
+                @apply mb-5 ;
+
+                p {
+                    @apply text-2xl text-nowrap text-white/80 hover:text-white/50 transition-colors delay-150 duration-150
+                    flex flex-row items-center justify-center;
+                }
+                ul {
+                    @apply  transition delay-200 duration-200 z-50;
+                    li{
+                        @apply text-xl text-white/80 hover:text-white/50 transition-colors delay-150 duration-150 flex flex-row items-start justify-start m-5;
+                    }
+                }
+            }
+
+        }
+        .btnDiv{
+        @apply  cursor-pointer w-fit h-fit flex  text-nowrap;
+        
+        .redBtn{
+            @apply bg-red-800 p-2 rounded-l-md hover:bg-red-950 hover:text-red-700 transition-colors delay-150 duration-150;
+        }
+        .blueBtn{
+            @apply bg-sky-800 p-2 rounded-r-md hover:bg-sky-950 hover:text-sky-700 transition-colors delay-150 duration-150;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
 import Header from '../headerComponent/header'
-import Menu from '../menuComponent/menu'
+import Menu from '../stickyPanel/menuComponent/menu'
 import Footer from '../footerComponent/footer'
 
 import style from './style.module.css'
@@ -13,7 +13,9 @@ function App() {
 
   return (
 	// <div className={style.container}></div>
-	<div className='bg-slate-100 w-full h-96'></div>
+	<div className='bg-stone-800 w-full h-screen flex justify-center'>
+		<div className='bg-black/25  w-11/12 h-full'></div>
+	</div>
 		// <>
 		// 	<div>
 		// 		<a href='https://vitejs.dev' target='_blank'>
