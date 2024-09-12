@@ -29,14 +29,21 @@ function SmallMenu(){
     return (
 			<div className={style.menuAbsolute} id='menuAbsolute'>
 				<div className={style.head}>
-					<X onClick={closeMenu} className={style.closeIcon} size={40} id='closeMenu' />
+					<X
+						onClick={closeMenu}
+						className={style.closeIcon}
+						size={40}
+						id='closeMenu'
+					/>
 				</div>
+
+				{/* <scroll.bind.apply> */}
 				<div className={style.menuS}>
 					<button onClick={showMenuList} data-path='oneS' className='group'>
-						<p>
+						<a>
 							About the fund
 							<ChevronDown />
-						</p>
+						</a>
 						<ul
 							data-target='oneS'
 							id='oneS'
@@ -54,10 +61,10 @@ function SmallMenu(){
 						</ul>
 					</button>
 					<button onClick={showMenuList} data-path='twoS' className='group'>
-						<p>
+						<a>
 							Reports
 							<ChevronDown />
-						</p>
+						</a>
 
 						<ul
 							data-target='twoS'
@@ -79,10 +86,10 @@ function SmallMenu(){
 						</ul>
 					</button>
 					<button onClick={showMenuList} data-path='threeS' className='group'>
-						<p>
+						<a>
 							Programs
 							<ChevronDown />
-						</p>
+						</a>
 						<ul
 							data-target='threeS'
 							id='threeS'
@@ -103,10 +110,10 @@ function SmallMenu(){
 						</ul>
 					</button>
 					<button onClick={showMenuList} data-path='fourS' className='group'>
-						<p>
+						<a>
 							Needs
 							<ChevronDown />
-						</p>
+						</a>
 						<ul
 							data-target='fourS'
 							id='fourS'
@@ -127,10 +134,10 @@ function SmallMenu(){
 						</ul>
 					</button>
 					<button onClick={showMenuList} data-path='fiveS' className='group'>
-						<p>
+						<a>
 							How to help
 							<ChevronDown />
-						</p>
+						</a>
 						<ul
 							data-target='fiveS'
 							id='fiveS'
@@ -151,16 +158,17 @@ function SmallMenu(){
 						</ul>
 					</button>
 					<button data-path='sixS'>
-						<p>News</p>
+						<a>News</a>
 					</button>
 					<button data-path='sevenS'>
-						<p>Contacts</p>
+						<a>Contacts</a>
 					</button>
 					<div className={style.btnDiv}>
 						<div className={style.redBtn}>Need help</div>
 						<div className={style.blueBtn}>Donate</div>
 					</div>
 				</div>
+				{/* </scroll.bind.apply> */}
 			</div>
 		)
 }

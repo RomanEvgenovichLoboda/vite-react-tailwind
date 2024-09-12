@@ -1,21 +1,17 @@
-import { useState } from 'react'
-import reactLogo from '../../assets/react.svg'
-import viteLogo from '/vite.svg'
-import Header from '../headerComponent/header'
-import Menu from '../stickyPanel/menuComponent/menu'
-import Footer from '../footerComponent/footer'
-
 import style from './style.module.css'
+import Card from '../cardComponent/card'
 
 function App() {
- 
-  const [count, setCount] = useState(0)
 
   return (
-	// <div className={style.container}></div>
-	<div className='bg-stone-800 w-full h-screen flex justify-center'>
-		<div className='bg-black/25  w-11/12 h-full'></div>
-	</div>
+		// <div className={style.container}></div>
+		<div className={style.main}>
+			<div className={style.container}>
+				<Card></Card>
+				<Card></Card>
+				<Card></Card>
+			</div>
+		</div>
 		// <>
 		// 	<div>
 		// 		<a href='https://vitejs.dev' target='_blank'>

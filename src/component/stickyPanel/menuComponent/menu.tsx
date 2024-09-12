@@ -25,7 +25,7 @@ function Menu(){
 					<button onClick={showMenuList} data-path='one' className='group'>
 						<a>
 							About the fund
-							<ChevronDown className='group-hover:text-white/50' />
+							<ChevronDown />
 						</a>
 						<ul data-target='one' id='one' className='group-hover:block hidden'>
 							<li>
@@ -46,7 +46,7 @@ function Menu(){
 					>
 						<a>
 							Reports
-							<ChevronDown className='group-hover:text-white/50' />
+							<ChevronDown />
 						</a>
 
 						<ul data-target='two' id='two' className='group-hover:block hidden'>
@@ -71,7 +71,7 @@ function Menu(){
 					>
 						<a>
 							Programs
-							<ChevronDown className='group-hover:text-white/50' />
+							<ChevronDown/>
 						</a>
 						<ul
 							data-target='three'
@@ -99,7 +99,7 @@ function Menu(){
 					>
 						<a>
 							Needs
-							<ChevronDown className='group-hover:text-white/50' />
+							<ChevronDown />
 						</a>
 						<ul
 							data-target='four'
@@ -127,7 +127,7 @@ function Menu(){
 					>
 						<a>
 							How to help
-							<ChevronDown className='group-hover:text-white/50' />
+							<ChevronDown />
 						</a>
 						<ul
 							data-target='five'

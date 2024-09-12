@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply w-60 rounded-lg shadow-lg p-3 flex flex-col items-center gap-3 bg-zinc-800
+     hover:shadow-purple-400 transition-shadow;
+    height: 500px;
+    div{
+        @apply w-full text-left text-xl
+    }
+    .description{
+        @apply  w-full overflow-hidden text-xs;
+    }
+    button{
+        @apply bg-purple-600 py-1 rounded-lg border-solid w-full
+         hover:bg-purple-500 hover:text-purple-900 transition-colors duration-150 delay-150
+    }
+}
