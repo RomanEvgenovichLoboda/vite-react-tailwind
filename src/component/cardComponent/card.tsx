@@ -1,31 +1,24 @@
 import style from './style.module.css'
+import { IProduct } from '../../service/interface'
+import { Link } from 'react-router-dom'
 
-function Card(){
+function Card(product:IProduct){
     return (
 			<div className={style.main}>
-				<img className='h-64' src='../../../public/images/gus.png'></img>
-				<div>Gus</div>
-				<div
-					className={style.description}
-					title='
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis
-					explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi
-					voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati
-					amet!
-                '
-				>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis
-					explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi
-					voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati
-					amet!
+				<img className='h-64' src={product.image} alt=''></img>
+				<div>{product.name}</div>
+				<div className={style.description} title={product.description}>
+					{product.description}
 				</div>
 				<div>
 					{new Intl.NumberFormat('ru-RU', {
 						style: 'currency',
 						currency: 'USD',
-					}).format(+'1000')}
+					}).format(+product.price)}
 				</div>
-				<button>Buy</button>
+				<Link className={style.link} to={`/detail/${product.id}`}>
+					Detail
+				</Link>
 			</div>
 		)
 }

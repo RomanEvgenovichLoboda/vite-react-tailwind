@@ -13,7 +13,10 @@ const openMenu = (e: MouseEvent<SVGSVGElement>) => {
 function StickyPanel(){
     return (
 			<div className={style.main}>
-				<img src='../../../public/images/logo.png'></img>
+				<a href='/'>
+					<img src='../../../public/images/logo.png'></img>
+				</a>
+
 				<Menu />
 				<SmallMenu />
 				<AlignJustify

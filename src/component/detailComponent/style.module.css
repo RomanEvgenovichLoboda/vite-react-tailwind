@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply w-full flex flex-col items-center justify-start gap-4 p-6;
+    min-height: 1000px;
+    img{
+        @apply w-96
+    }
+    h1{
+        @apply text-5xl
+    }
+    h2{
+        @apply text-xl
+    }
+}
