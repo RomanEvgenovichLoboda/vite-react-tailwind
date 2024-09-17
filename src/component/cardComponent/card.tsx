@@ -11,13 +11,13 @@ function Card(product:IProduct){
 					{product.description}
 				</div>
 				<div>
-					{new Intl.NumberFormat('ru-RU', {
+					{new Intl.NumberFormat('ua-UA', {
 						style: 'currency',
-						currency: 'USD',
+						currency: 'UAH',
 					}).format(+product.price)}
 				</div>
 				<Link className={style.link} to={`/detail/${product.id}`}>
-					Detail
+					Опис
 				</Link>
 			</div>
 		)

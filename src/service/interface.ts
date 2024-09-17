@@ -5,3 +5,14 @@ export interface IProduct{
     description:string
     price:number
 }
+
+export interface INavMenu{
+    title:string
+    menuItems?:IMenuItem[]
+    link?:string
+}
+
+export interface IMenuItem{
+    title:string
+    link:string
+}

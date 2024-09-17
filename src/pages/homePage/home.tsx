@@ -1,8 +1,8 @@
 import style from './style.module.css'
-import Card from '../cardComponent/card'
+import Card from '../../component/cardComponent/card'
 import { products } from '../../service/data'
 
-function App() {
+function Home() {
 
   return (
 		<div className={style.main}>
@@ -17,4 +17,4 @@ function App() {
 	)
 }
 
-export default App
+export default Home

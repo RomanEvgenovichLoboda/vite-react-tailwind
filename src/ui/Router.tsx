@@ -1,12 +1,13 @@
 import{BrowserRouter,Routes,Route} from 'react-router-dom'
-import App from '../component/appComponent/App'
-import Detail from '../component/detailComponent/detail'
+import Home from '../pages/homePage/home'
+import Detail from '../pages/detailPage/detail'
 function Router(){
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<App />} path='/' />
+                <Route element={<Home />} path='/' />
                 <Route element={<Detail />} path='/detail/:id' />
+                <Route element={<div className=' flex items-center justify-center text-6xl text-purple-700' style={{minHeight:'1000px'}}>About</div>} path='/about' />
                 <Route element={<div className=' flex items-center justify-center text-6xl text-red-700' style={{minHeight:'1000px'}}>Not Found !</div>} path='*' />
             </Routes>
         </BrowserRouter>

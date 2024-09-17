@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply ml-auto md:hidden;
+    .icon{
+        @apply hover:text-purple-600 transition-colors duration-150 delay-150;
+    }
+    .menu{
+        @apply absolute left-0 mt-5 w-screen h-screen flex;
+        .transparentDiv{
+            @apply w-1/2 h-screen  bg-black/50;
+            
+        }
+        .zincDiv{
+                @apply w-1/2 h-screen bg-zinc-800 ml-auto pl-5 pt-5 z-20;
+            }
+    }
+}

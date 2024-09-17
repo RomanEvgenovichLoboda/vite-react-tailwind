@@ -1,30 +1,21 @@
 import style from './style.module.css'
-import Menu from './menuComponent/menu'
-import SmallMenu from './smallMenuComponent/smallMenu'
-import { MouseEvent } from 'react'
-import { AlignJustify } from 'lucide-react'
-
-const openMenu = (e: MouseEvent<SVGSVGElement>) => {
-    const menu = document.getElementById('menuAbsolute')
-    console.log('open')
-    menu?.classList.add('block')
-}
+import { NavItem } from './navItemComponent/navItem'
+import { navMenu } from '../../service/data'
+import { MobilMenu } from './mobileMenuComponent/mobilMenu'
+import { Search } from 'lucide-react'
 
 function StickyPanel(){
     return (
-			<div className={style.main}>
-				<a href='/'>
-					<img src='../../../public/images/logo.png'></img>
-				</a>
-
-				<Menu />
-				<SmallMenu />
-				<AlignJustify
-					onClick={openMenu}
-					size={50}
-					className={style.menu}
-				></AlignJustify>
-			</div>
-		)
+		<div className={style.main}>
+			<a href='/'>
+				<img src='../../../public/images/logo.png'></img>
+			</a>
+			<nav>
+				{navMenu.map(e=><NavItem {...e} key={e.title}/>)}
+			</nav>
+			<Search className={style.search} size={50}/>
+			<MobilMenu/>
+		</div>
+	)
 }
 export default StickyPanel

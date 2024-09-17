@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 .main{
-    @apply w-full p-3 bg-zinc-800 sticky top-0 flex justify-between items-center
-    border-solid border-b-2 border-stone-700;
+    @apply w-full p-3 bg-zinc-800 sticky top-0 flex items-center
+    border-solid border-b-2 border-stone-700 z-10;
 
     img{
         @apply w-16 hover:opacity-40 transition-opacity duration-150 delay-150 cursor-pointer;
     }
+    nav{
+        @apply ml-6 hidden gap-3 md:flex
+    }
+    .search{
+        @apply ml-auto hover:text-purple-600 transition-colors duration-150 delay-150
+    }
     .menu{
         @apply lg:hidden block hover:text-purple-600 transition-colors duration-150 delay-150;
     }
-    
-
 }
