@@ -3,7 +3,7 @@ import { IProduct, IMenuItem,INavMenu } from "./interface"
 export const products: IProduct[] = [
 	{
 		id: 1,
-		image: 'images/gus.png',
+		image: ['images/gus.png'],
 		name: 'Гусак',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati amet!',
@@ -11,7 +11,7 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 2,
-		image: 'images/gus.png',
+		image: ['images/gus.png'],
 		name: 'Гусак2',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati amet!',
@@ -19,8 +19,20 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 3,
-		image: 'images/gus.png',
+		image: ['images/gus.png'],
 		name: 'Гусак3',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati amet!',
+		price: 2000,
+	},
+	{
+		id: 4,
+		image: [
+			'images/rabbit/rabbit1.jpg',
+			'images/rabbit/rabbit2.jpg',
+			'images/rabbit/rabbit3.jpg',
+		],
+		name: 'Кролик',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis explicabo fuga libero nostrum, quo nulla soluta quisquam eligendi voluptatibus cumque rem cum sit quasi, inventore vitae id obcaecati amet!',
 		price: 2000,

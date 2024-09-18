@@ -6,15 +6,10 @@ function Home() {
 
   return (
 		<div className={style.main}>
-			<div className={style.container}>
-				{products.map(product=>(
-					<Card key={product.id} {...product}/>
-				))}
-				
-			</div>
+			{products.map(product => (
+				<Card key={product.id} {...product} />
+			))}
 		</div>
-		
 	)
 }
-
 export default Home

@@ -3,15 +3,30 @@
 @tailwind utilities;
 
 .main{
-    @apply w-full flex flex-col items-center justify-start gap-4 p-6;
+    @apply bg-black/25 w-full md:w-11/12 flex flex-col items-center justify-start gap-4 p-6;
     min-height: 1000px;
-    img{
-        @apply w-96
-    }
     h1{
-        @apply text-5xl
+        @apply text-5xl;
     }
-    h2{
-        @apply text-xl
+
+    .container{
+        @apply w-full flex md:flex-row flex-col md:items-start justify-center items-center gap-2 ;
+
+        .genImg{
+            @apply w-4/5 md:w-2/3 lg:w-2/5;
+        }
+        .slidesContainer{
+            @apply flex md:flex-col items-center justify-center gap-2;
+            .slide{
+                @apply w-24 md:w-32
+            }
+        }
+        
+        .description{
+            @apply text-xl md:w-96
+        }
+        .price{
+            @apply mt-10;
+        }
     }
 }
