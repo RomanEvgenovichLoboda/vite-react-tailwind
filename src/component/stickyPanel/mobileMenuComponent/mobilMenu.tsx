@@ -3,6 +3,7 @@ import style from './style.module.css'
 import { useState } from 'react'
 import { navMenu } from '../../../service/data'
 import { NavItem } from '../navItemComponent/navItem'
+import {motion} from 'framer-motion'
 
 
 export const MobilMenu = () => {
@@ -14,12 +15,16 @@ export const MobilMenu = () => {
             : ( <AlignJustify className={style.icon} size={50} onClick={() => setOpen(!isOpen)} /> )
             }
 			{isOpen && (
-				<div className={style.menu}>
+				<motion.div className={style.menu}
+				initial={{ opacity: 0, scale: 0.5 }}
+    			animate={{ opacity: 1, scale: 1 }}
+    			transition={{ duration: 0.2 }}
+				>
 					<div className={style.transparentDiv} onClick={() => setOpen(!isOpen)} ></div>
 					<div className={style.zincDiv}>
 						{navMenu.map(e => ( <NavItem {...e} key={e.title} /> ))}
 					</div>
-				</div>
+				</motion.div>
 			)}
 		</div>
 	)

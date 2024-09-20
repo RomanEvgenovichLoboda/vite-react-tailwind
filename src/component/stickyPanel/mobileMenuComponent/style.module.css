@@ -5,7 +5,7 @@
 .main{
     @apply ml-auto md:hidden;
     .icon{
-        @apply hover:text-purple-600 transition-colors duration-150 delay-150;
+        @apply cursor-pointer hover:text-purple-600 transition-colors duration-150 delay-150 active:text-purple-600;
     }
     .menu{
         @apply absolute left-0 mt-5 w-screen h-screen flex;

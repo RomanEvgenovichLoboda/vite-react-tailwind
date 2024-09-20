@@ -13,7 +13,7 @@
         @apply ml-6 hidden gap-3 md:flex
     }
     .search{
-        @apply ml-auto cursor-pointer hover:text-purple-600 transition-colors duration-150 delay-150
+        @apply ml-auto cursor-pointer hover:text-purple-600 transition-colors duration-150 delay-150 active:text-purple-600
     }
     .menu{
         @apply lg:hidden block hover:text-purple-600 transition-colors duration-150 delay-150;

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .main{
-    @apply bg-black/25 w-full md:w-11/12 flex flex-col items-center justify-start gap-4 p-6;
-    min-height: 1000px;
+    @apply bg-black/25 w-full md:w-11/12 flex flex-col items-center justify-start gap-4 p-6 min-h-[900px];
+
     h1{
         @apply text-5xl;
     }
@@ -15,16 +15,19 @@
         .genImg{
             @apply w-4/5 md:w-2/3 lg:w-2/5;
         }
+
         .slidesContainer{
             @apply flex md:flex-col items-center justify-center gap-2;
+
             .slide{
-                @apply w-24 md:w-32
+                @apply w-24 md:w-32 cursor-pointer;
             }
         }
         
         .description{
             @apply text-xl md:w-96
         }
+        
         .price{
             @apply mt-10;
         }

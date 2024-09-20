@@ -1,12 +1,17 @@
 import style from './style.module.css'
 import { IProduct } from '../../service/interface'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function Card(product:IProduct){
     return (
-			<div className={style.main}>
-				<img className='h-72' src={product.image[0]} alt=''></img>
-				<div>{product.name}</div>
+			<motion.div
+				className={style.main}
+				whileHover={{ scale: 1.05 }}
+				whileTap={{ scale: 1.05 }}
+			>
+				<img src={product.image[0]} alt='Image not found'></img>
+				<div className={style.name}>{product.name}</div>
 				<div className={style.description} title={product.description}>
 					{product.description}
 				</div>
@@ -19,7 +24,7 @@ function Card(product:IProduct){
 				<Link className={style.link} to={`/detail/${product.id}`}>
 					Опис
 				</Link>
-			</div>
+			</motion.div>
 		)
 }
 export default Card
