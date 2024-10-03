@@ -1,9 +1,9 @@
-export interface IProduct{
-    id:number
-    image:string[]
-    name:string
-    description:string
-    price:number
+export interface IProduct {
+	id: number
+	name: string
+	description: string
+	price: number
+	images: string[]
 }
 
 export interface INavMenu{

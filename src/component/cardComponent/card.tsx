@@ -10,7 +10,7 @@ function Card(product:IProduct){
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 1.05 }}
 			>
-				<img src={product.image[0]} alt='Image not found'></img>
+				<img src={`data:image/gif;base64,${product.images[0]}`} alt='Image not found'></img>
 				<div className={style.name}>{product.name}</div>
 				<div className={style.description} title={product.description}>
 					{product.description}

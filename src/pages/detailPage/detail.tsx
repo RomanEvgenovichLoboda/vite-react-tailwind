@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProductById} from "../../service/data"
+import { getById } from "../../service/fetchRepository"
 import { IProduct } from "../../service/interface"
 import style from './style.module.css'
 import {motion} from 'framer-motion'
@@ -23,19 +23,16 @@ function Detail(){
     const [product, setProduct] = useState<IProduct>()
     useEffect(()=>{
         if(!id) return
-        setProduct(getProductById(id))
-		setImage(product?.image[0])
+		getById(parseInt(id)).then(
+			value => setProduct(value),
+			reason => console.log(reason)
+		)
+		setImage(product?.images[0])
     },[id])
 
-    return product?.name ? (
-			<motion.div
-			 initial='hidden'
-			  whileInView='visible'
-			  
-			   className={style.main}>
-				<motion.h1 
-				custom={1} 
-				variants={textAnimation}>
+    return product?.images[0] ? (
+			<motion.div initial='hidden' whileInView='visible' className={style.main}>
+				<motion.h1 custom={1} variants={textAnimation}>
 					{product.name}
 				</motion.h1>
 				<div className={style.container}>
@@ -46,27 +43,25 @@ function Detail(){
 						className={style.genImg}
 						src={
 							image
-								? `../../../public/${image}`
-								: `../../../public/${product.image[0]}`
+								? `data:image/gif;base64,${image}`
+								: `data:image/gif;base64,${product.images[0]}`
 						}
 						alt={`Image not found`}
 					/>
 					<div className={style.slidesContainer}>
-						{product.image.map((e, k) => (
+						{product.images.map((e, k) => (
 							<motion.img
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.95 }}
 								className={style.slide}
-								src={`../../../public/${e}`}
+								src={`data:image/gif;base64,${e}`}
 								key={k}
 								onClick={() => setImage(e)}
 							/>
 						))}
 					</div>
 					<div className={style.description}>
-						<motion.p 
-						custom={2} 
-						variants={textAnimation}>
+						<motion.p custom={2} variants={textAnimation}>
 							{product.description}
 						</motion.p>
 						<motion.h1

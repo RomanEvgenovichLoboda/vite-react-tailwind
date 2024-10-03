@@ -15,7 +15,7 @@
     }
 
     .description{
-        @apply  w-full max-h-64 overflow-hidden text-xs;
+        @apply  w-full h-20 md:h-12 bg-black/15 overflow-hidden text-xs;
     }
     
     .link{
