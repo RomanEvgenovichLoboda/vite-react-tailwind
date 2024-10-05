@@ -27,10 +27,10 @@ function Detail(){
 			value => setProduct(value),
 			reason => console.log(reason)
 		)
-		setImage(product?.images[0])
+		setImage(product?.image1)
     },[id])
 
-    return product?.images[0] ? (
+    return product?.image1 ? (
 			<motion.div initial='hidden' whileInView='visible' className={style.main}>
 				<motion.h1 custom={1} variants={textAnimation}>
 					{product.name}
@@ -44,21 +44,32 @@ function Detail(){
 						src={
 							image
 								? `data:image/gif;base64,${image}`
-								: `data:image/gif;base64,${product.images[0]}`
+								: `data:image/gif;base64,${product.image1}`
 						}
 						alt={`Image not found`}
 					/>
 					<div className={style.slidesContainer}>
-						{product.images.map((e, k) => (
-							<motion.img
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-								className={style.slide}
-								src={`data:image/gif;base64,${e}`}
-								key={k}
-								onClick={() => setImage(e)}
-							/>
-						))}
+						<motion.img
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className={style.slide}
+							src={`data:image/gif;base64,${product.image1}`}
+							onClick={() => setImage(product.image1)}
+						/>
+						<motion.img
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className={style.slide}
+							src={`data:image/gif;base64,${product.image2}`}
+							onClick={() => setImage(product.image2)}
+						/>
+						<motion.img
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className={style.slide}
+							src={`data:image/gif;base64,${product.image3}`}
+							onClick={() => setImage(product.image3)}
+						/>
 					</div>
 					<div className={style.description}>
 						<motion.p custom={2} variants={textAnimation}>

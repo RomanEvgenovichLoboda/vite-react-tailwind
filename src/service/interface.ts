@@ -3,7 +3,9 @@ export interface IProduct {
 	name: string
 	description: string
 	price: number
-	images: string[]
+	image1: string
+	image2: string
+	image3: string
 }
 
 export interface INavMenu{
