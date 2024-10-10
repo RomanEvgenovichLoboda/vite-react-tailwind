@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply min-h-[900px] w-full md:w-1/2;
+    
+    h4{
+        @apply text-4xl w-full text-center mt-5;
+    }
+
+
+
+
+    form{
+        @apply p-10 flex flex-col gap-5;
+
+        input, textarea{
+            @apply text-purple-800 outline-none border-solid border-transparent focus:border-purple-900 px-2;
+        }
+    }
+}

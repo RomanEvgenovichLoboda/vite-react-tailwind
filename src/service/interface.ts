@@ -1,11 +1,11 @@
 export interface IProduct {
-	id: number
+	id: number|null
 	name: string
 	description: string
-	price: number
-	image1: string
-	image2: string
-	image3: string
+	price: number | undefined
+	image1: string | ArrayBuffer | null | undefined
+	image2: string | ArrayBuffer | null | undefined
+	image3: string | ArrayBuffer | null | undefined
 }
 
 export interface INavMenu{

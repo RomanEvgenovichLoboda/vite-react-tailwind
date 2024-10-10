@@ -10,7 +10,14 @@ function Card(product:IProduct){
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 1.05 }}
 			>
-				<img src={`data:image/gif;base64,${product.image1}`} alt='Image not found'></img>
+				{/* <img
+					src={`data:image/gif;base64,${product.image1}`}
+					alt='Image not found'
+				></img> */}
+				<img
+					src={product.image1?.toString()}
+					alt='Image not found'
+				></img>
 				<div className={style.name}>{product.name}</div>
 				<div className={style.description} title={product.description}>
 					{product.description}
@@ -19,7 +26,7 @@ function Card(product:IProduct){
 					{new Intl.NumberFormat('ua-UA', {
 						style: 'currency',
 						currency: 'UAH',
-					}).format(+product.price)}
+					}).format(+product.price!)}
 				</div>
 				<Link className={style.link} to={`/detail/${product.id}`}>
 					Опис

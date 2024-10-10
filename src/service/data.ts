@@ -38,6 +38,10 @@ export const navMenu: INavMenu[] = [
 	},
 	{
 		title: 'Про нас',
-		link:'/about'
+		link: '/about'
+	},
+	{
+		title: 'Додати',
+		link: '/create'
 	}
 ]

@@ -19,7 +19,7 @@ const textAnimation ={
 
 function Detail(){
     const { id } = useParams()
-	const [image,setImage] = useState<string|undefined>()
+	const [image,setImage] = useState<string|undefined|ArrayBuffer>()
     const [product, setProduct] = useState<IProduct>()
     useEffect(()=>{
         if(!id) return
@@ -27,7 +27,7 @@ function Detail(){
 			value => setProduct(value),
 			reason => console.log(reason)
 		)
-		setImage(product?.image1)
+		setImage(product?.image1!)
     },[id])
 
     return product?.image1 ? (
@@ -43,8 +43,8 @@ function Detail(){
 						className={style.genImg}
 						src={
 							image
-								? `data:image/gif;base64,${image}`
-								: `data:image/gif;base64,${product.image1}`
+								? `${image}`
+								: `${product.image1}`
 						}
 						alt={`Image not found`}
 					/>
@@ -53,22 +53,22 @@ function Detail(){
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							className={style.slide}
-							src={`data:image/gif;base64,${product.image1}`}
-							onClick={() => setImage(product.image1)}
+							src={`${product.image1}`}
+							onClick={() => setImage(product.image1!)}
 						/>
 						<motion.img
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							className={style.slide}
-							src={`data:image/gif;base64,${product.image2}`}
-							onClick={() => setImage(product.image2)}
+							src={`${product.image2}`}
+							onClick={() => setImage(product.image2!)}
 						/>
 						<motion.img
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							className={style.slide}
-							src={`data:image/gif;base64,${product.image3}`}
-							onClick={() => setImage(product.image3)}
+							src={`${product.image3}`}
+							onClick={() => setImage(product.image3!)}
 						/>
 					</div>
 					<div className={style.description}>
@@ -83,7 +83,7 @@ function Detail(){
 							{new Intl.NumberFormat('ru-RU', {
 								style: 'currency',
 								currency: 'USD',
-							}).format(+product.price)}
+							}).format(+product.price!)}
 						</motion.h1>
 					</div>
 				</div>

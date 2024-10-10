@@ -15,7 +15,7 @@ export async function getAll():Promise<IProduct[] | undefined>{
 }
 
 export async function getById(id:number):Promise<IProduct | undefined> {
-    const url = 'http://localhost:8080/products/getById?id='+id;
+    const url = 'http://localhost:8080/products/getById?id='+id
     try {
 			const response = await fetch(url)
 			if (!response.ok) {
@@ -26,4 +26,20 @@ export async function getById(id:number):Promise<IProduct | undefined> {
 		} catch (error: Error | unknown) {
 			console.error(error)
 		}
+}
+export async function create(product:IProduct){
+    const url = 'http://localhost:8080/products/create'
+    try{
+        const response = await fetch(url,{
+            method:"POST",
+            body: JSON.stringify(product),
+            headers: {
+                "Content-Type":"application/json",
+            },
+        })
+        const json = await response.json()
+        console.log('Втаю', JSON.stringify(json))
+    }catch(error){
+        console.error('Помилка',error)
+    }
 }
