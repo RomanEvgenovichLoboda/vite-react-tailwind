@@ -6,17 +6,45 @@
     @apply min-h-[900px] w-full md:w-1/2;
     
     h4{
-        @apply text-4xl w-full text-center mt-5;
+        @apply text-4xl w-11/12 mx-auto text-center mt-5 border-b-2 border-solid p-5;
     }
 
 
 
 
     form{
-        @apply p-10 flex flex-col gap-5;
+        @apply p-10 flex flex-col gap-2;
+        h1{
+            @apply text-red-600;
+        }
 
         input, textarea{
-            @apply text-purple-800 outline-none border-solid border-transparent focus:border-purple-900 px-2;
+            @apply rounded-md text-purple-800 outline-none border-solid border-2 border-transparent focus:border-purple-600 px-2;
+        }   
+        .file{
+            @apply file:rounded-full file:border-2 file:border-transparent file:text-lg  file:bg-violet-50 file:text-gray-400 file:cursor-pointer
+            hover:file:bg-transparent hover:file:border-purple-600 hover:file:text-purple-600 file:transition-colors file:duration-150 file:delay-150;
         }
+
+        .btn_div{
+            @apply flex justify-between p-5;
+            button{
+                @apply rounded-lg w-36 text-lg border-2 border-solid border-transparent hover:bg-transparent transition-colors duration-150 delay-150;
+            }
+
+            .btn_purple{
+                @apply bg-purple-600 hover:text-purple-600 hover:border-purple-600;
+            }
+            .btn_red{
+                @apply bg-red-600 hover:text-red-600 hover:border-red-600;
+            }
+        }
+        
     }
+}
+.text-red{
+    @apply line-through;
+}
+.text-purple{
+    @apply text-purple-600;
 }

@@ -11,7 +11,7 @@
      }
 
     .name{
-        @apply w-full text-left text-xl
+        @apply w-full text-left md:text-xl text-nowrap overflow-hidden
     }
 
     .description{
