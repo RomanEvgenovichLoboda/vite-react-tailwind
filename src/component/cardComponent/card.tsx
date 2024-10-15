@@ -1,6 +1,5 @@
 import style from './style.module.css'
 import { IProduct } from '../../service/interface'
-import { Link } from 'react-router-dom'
 import {motion} from 'framer-motion'
 
 function Card(product:IProduct){

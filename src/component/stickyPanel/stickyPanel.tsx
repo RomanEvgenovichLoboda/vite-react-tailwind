@@ -17,7 +17,6 @@ function StickyPanel(){
 						<NavItem {...e} key={e.title} />
 					))}
 				</nav>
-				{/* <Search className={style.search} size={50}/> */}
 				<input
 					className='ml-auto text-purple-950'
 					placeholder='Знайти продукт'

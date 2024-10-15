@@ -12,9 +12,9 @@
     nav{
         @apply ml-6 hidden gap-3 md:flex
     }
-    .search{
-        @apply ml-auto cursor-pointer hover:text-purple-600 transition-colors duration-150 delay-150 active:text-purple-600
-    }
+     input{
+         @apply rounded-md text-purple-800 outline-none border-solid border-2 border-transparent focus:border-purple-600 px-2;
+     }
     .menu{
         @apply lg:hidden block hover:text-purple-600 transition-colors duration-150 delay-150;
     }
