@@ -28,9 +28,9 @@ function Card(product:IProduct){
 						currency: 'UAH',
 					}).format(+product.price!)}
 				</div>
-				<Link className={style.link} to={`/detail/${product.id}`}>
+				<a className={style.link} href={`/detail/${product.id}`}>
 					Опис
-				</Link>
+				</a>
 			</motion.div>
 		)
 }

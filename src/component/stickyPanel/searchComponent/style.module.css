@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    @apply z-10 absolute w-full min-h-[250px] h-96 bg-black/40 top-20 left-0 p-5 overflow-scroll
+    scroll-smooth;
+}

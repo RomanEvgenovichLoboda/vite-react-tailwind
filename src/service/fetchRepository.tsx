@@ -43,3 +43,17 @@ export async function create(product:IProduct){
         console.error('Помилка',error)
     }
 }
+
+export async function getFindList(name:string){
+    const url = 'http://localhost:8080/products/findList?name=' + name
+    try{
+        	const response = await fetch(url)
+			if (!response.ok) {
+				throw new Error(`Response status: ${response.status}`)
+			}
+			const json = await response.json()
+			return json
+		}catch (error: Error | unknown) {
+			console.error(error)
+		}
+}
