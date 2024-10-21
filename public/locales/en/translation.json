@@ -1,0 +1,19 @@
+{
+	"detail": "Detail",
+	"search": "Search",
+    "create_product": "Create product",
+    "name": "Name",
+    "description": "Description",
+    "price": "Price",
+    "save": "Save",
+    "cancel": "Cancel",
+    "toys": "Toys",
+    "pictures": "Pictures",
+    "about": "About us",
+    "create": "Create",
+    "little": "Little",
+    "medium": "Medium",
+    "big": "Big",
+    "beads": "Beads",
+    "threads": "Threads"
+}

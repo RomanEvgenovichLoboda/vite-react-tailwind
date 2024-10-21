@@ -9,6 +9,7 @@ export interface IProduct {
 }
 
 export interface INavMenu{
+	// [x: string]: any
     title:string
     menuItems?:IMenuItem[]
     link?:string

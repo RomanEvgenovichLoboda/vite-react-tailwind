@@ -3,8 +3,10 @@ import style from './style.module.css'
 import { IProduct } from '../../service/interface'
 import { create } from '../../service/fetchRepository'
 import {  useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export function Create() {
+	const[locale,setLocale]=useTranslation()
 	const [name, setName] = useState('')
 	const [description, setDescription] = useState('')
 	const [image1, setImage1] = useState<string | ArrayBuffer | null>()
@@ -60,13 +62,13 @@ export function Create() {
 	}
     return (
 		<div className={style.main}>
-			<h4>Додати продукт</h4>
+			<h4>{locale("create_product")}</h4>
 			<form action='/' onSubmit={e => onSubmit(e)}>
 				<h1>{name.length > 0 && name.length <= 50 ? '' : '*'}</h1>
 				<input
 					name='name'
 					type='text'
-					placeholder='Імʼя'
+					placeholder={locale("name")}
 					value={name}
 					onChange={e => setName(e.target.value)}
 				/>
@@ -75,7 +77,7 @@ export function Create() {
 				</h1>
 				<textarea
 					name='description'
-					placeholder='Опис'
+					placeholder={locale("description")}
 					onChange={e => setDescription(e.target.value)}
 					value={description}
 				/>
@@ -143,15 +145,15 @@ export function Create() {
 				<input
 					name='price'
 					type='number'
-					placeholder='Ціна'
+					placeholder={locale("price")}
 					onChange={e => setPrice(parseFloat(e.target.value))}
 				/>
 				<div className={style.btn_div}>
 					<button className={style.btn_purple} type='submit'>
-						Зберегти
+						{locale("save")}
 					</button>
 					<button className={style.btn_red} onClick={() => navigate('/')}>
-						Скасувати
+						{locale("cancel")}
 					</button>
 				</div>
 			</form>

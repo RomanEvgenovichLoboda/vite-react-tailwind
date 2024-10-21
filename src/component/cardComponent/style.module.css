@@ -4,7 +4,7 @@
 
 .main{
     @apply w-44 md:w-60 rounded-lg shadow-lg p-3 flex flex-col items-center gap-3 bg-zinc-800
-     hover:shadow-purple-400 transition-shadow h-[450px] md:h-[500x];
+     hover:shadow-purple-400 transition-shadow h-[450px] md:h-[500px];
 
      img{
         @apply md:h-60 rounded-lg;
@@ -15,7 +15,7 @@
     }
 
     .description{
-        @apply  w-full h-20 md:h-12 bg-black/15 overflow-hidden text-xs;
+        @apply  w-full h-24  bg-black/15 overflow-hidden text-xs;
     }
     
     .link{

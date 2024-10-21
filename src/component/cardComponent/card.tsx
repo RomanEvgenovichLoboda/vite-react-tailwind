@@ -1,8 +1,10 @@
 import style from './style.module.css'
 import { IProduct } from '../../service/interface'
 import {motion} from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 function Card(product:IProduct){
+	const[locale,setLocale]=useTranslation()
     return (
 			<motion.div
 				className={style.main}
@@ -28,7 +30,7 @@ function Card(product:IProduct){
 					}).format(+product.price!)}
 				</div>
 				<a className={style.link} href={`/detail/${product.id}`}>
-					Опис
+					{locale("detail")}
 				</a>
 			</motion.div>
 		)

@@ -1,7 +1,9 @@
+// import { useTranslation } from "react-i18next"
 import { IMenuItem,INavMenu } from "./interface"
+// const [locale,setLocale] = useTranslation()
 
 
-export const toysMenu: IMenuItem[] = [
+export const toysMenuUk: IMenuItem[] = [
 	{
 		title: 'Маленькі',
 		link: '/',
@@ -16,7 +18,7 @@ export const toysMenu: IMenuItem[] = [
 	}
 ]
 
-export const picturesMenu: IMenuItem[] = [
+export const picturesMenuUk: IMenuItem[] = [
 	{
 		title: 'Бісером',
 		link: '/',
@@ -27,14 +29,14 @@ export const picturesMenu: IMenuItem[] = [
 	}
 ]
 
-export const navMenu: INavMenu[] = [
+export const navMenuUk: INavMenu[] = [
 	{
 		title: 'Іграшки',
-		menuItems: toysMenu,
+		menuItems: toysMenuUk,
 	},
 	{
 		title: 'Картини',
-		menuItems: picturesMenu,
+		menuItems: picturesMenuUk,
 	},
 	{
 		title: 'Про нас',
@@ -44,4 +46,59 @@ export const navMenu: INavMenu[] = [
 		title: 'Додати',
 		link: '/create'
 	}
+]
+
+
+
+
+
+
+
+
+
+
+
+export const toysMenu: IMenuItem[] = [
+	{
+		title: 'Little',
+		link: '/',
+	},
+	{
+		title: 'Medium',
+		link: '/',
+	},
+	{
+		title: 'Big',
+		link: '/',
+	},
+]
+
+export const picturesMenu: IMenuItem[] = [
+	{
+		title: 'Beads',
+		link: '/',
+	},
+	{
+		title: 'Threads',
+		link: '/',
+	},
+]
+
+export const navMenu: INavMenu[] = [
+	{
+		title: 'Toys',
+		menuItems: toysMenu,
+	},
+	{
+		title: 'Pictures',
+		menuItems: picturesMenu,
+	},
+	{
+		title: 'About us',
+		link: '/about',
+	},
+	{
+		title: 'Create',
+		link: '/create',
+	},
 ]

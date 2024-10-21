@@ -13,7 +13,7 @@
         @apply flex flex-col gap-2;
     }
 
-    a{
+    a,p{
         @apply flex items-center gap-1 cursor-pointer
          hover:text-purple-600 transition-colors duration-150 delay-150;
     }

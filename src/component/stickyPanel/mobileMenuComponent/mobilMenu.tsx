@@ -1,13 +1,20 @@
 import { AlignJustify, X } from 'lucide-react'
 import style from './style.module.css'
-import { useState } from 'react'
-import { navMenu } from '../../../service/data'
+import { useEffect, useState } from 'react'
+import { navMenu, navMenuUk } from '../../../service/data'
 import { NavItem } from '../navItemComponent/navItem'
 import {motion} from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
-
-export const MobilMenu = () => {
+function MobilMenu (){
+	const[locale,setLocale]=useTranslation()
     const [isOpen,setOpen] = useState(false)
+	const [menu,setMenu]=useState(navMenuUk)
+	useEffect(()=>{
+		if(setLocale.language == 'en') setMenu(navMenu)
+		else if(setLocale.language == 'uk') setMenu(navMenuUk)
+	},[setLocale.language])
+
   return (
 		<div className={style.main}>
 			{isOpen 
@@ -22,10 +29,11 @@ export const MobilMenu = () => {
 				>
 					<div className={style.transparentDiv} onClick={() => setOpen(!isOpen)} ></div>
 					<div className={style.zincDiv}>
-						{navMenu.map(e => ( <NavItem {...e} key={e.title} /> ))}
+						{menu&&menu.map(e => ( <NavItem {...e} key={e.title} /> ))}
 					</div>
 				</motion.div>
 			)}
 		</div>
 	)
 }
+export default MobilMenu

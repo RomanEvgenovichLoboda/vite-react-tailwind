@@ -3,9 +3,9 @@ import { Facebook, Youtube, Instagram, Github} from 'lucide-react'
 
 function Footer(){
     return (
-			<div className={style.main}>
+			<footer className={style.main}>
 				<a className='animate-pulse'>Loboda Roman | 2024</a>
-				<div className={style.iconsContainer}>
+				<nav className={style.iconsContainer}>
 					<a>
 						<Github />
 					</a>
@@ -18,8 +18,8 @@ function Footer(){
 					<a>
 						<Instagram />
 					</a>
-				</div>
-			</div>
+				</nav>
+			</footer>
 		)
 }
 export default Footer

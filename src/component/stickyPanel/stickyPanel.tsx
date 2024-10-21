@@ -1,25 +1,33 @@
 import style from './style.module.css'
 import { NavItem } from './navItemComponent/navItem'
-import { navMenu } from '../../service/data'
-import { MobilMenu } from './mobileMenuComponent/mobilMenu'
+import { navMenu, navMenuUk } from '../../service/data'
+import  MobilMenu  from './mobileMenuComponent/mobilMenu'
 import Search from './searchComponent/search'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 function StickyPanel(){
+	const[menu,setMenu]=useState(navMenu)
 	const [search, setSearch] = useState('')
+	const[locale,setLocale]=useTranslation()
+	useEffect(() => {
+		if(setLocale.language=='en')setMenu(navMenu)
+		else if (setLocale.language=='uk')setMenu(navMenuUk)
+	}, [setLocale.language])
+
     return (
 			<div className={style.main}>
 				<a href='/'>
 					<img src='../../../public/images/logo.png'></img>
 				</a>
 				<nav>
-					{navMenu.map(e => (
+					{menu.map(e => (
 						<NavItem {...e} key={e.title} />
 					))}
 				</nav>
 				<input
 					className='ml-auto text-purple-950'
-					placeholder='Знайти продукт'
+					placeholder={locale('search')}
 					onChange={e => setSearch(e.target.value)}
 				></input>
 				{search && <Search search={search} />}
